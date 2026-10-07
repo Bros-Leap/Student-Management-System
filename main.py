@@ -20,9 +20,19 @@ class stu_manage():
             if students['id'] == stu_id:
                 print(f"Result: \nID: {students['id']}\nName:{students['name']}\nSex:{students['sex']}\nBirth Date:{students['birth-date']}\nAverage:{students['average']}")
                 return
-            print("ID not found!")
-            
+        print("ID not found!")
+    # 3.Delete student
+    def delete_stu(self,stu_id):
+        for students in self.stu:
+            if students['id'] == stu_id:
+                self.stu.remove(students)
+                print(f"Student with ID: {stu_id} deleted.")
+                return
+        print("ID not found!")
 student = stu_manage()
 student.adding_stu(1,"daleap","M","30-06-2002",50.5)
-student.search_stu(1)
-#print(student.stu)
+student.adding_stu(2,"pheaktra","F","21-08-2008",90.5)
+student.adding_stu(3,"bona","M","30-06-2002",45.5)
+student.delete_stu(3)
+#student.search_stu(2)
+print(student.stu)
