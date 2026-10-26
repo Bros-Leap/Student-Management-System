@@ -14,6 +14,7 @@ class stu_manage():
         }
         self.stu.append(students)
         print("Student added successful.")
+        print(self.stu)
     # 2.Search student
     def search_stu(self,stu_id):
         for students in self.stu:
@@ -29,10 +30,23 @@ class stu_manage():
                 print(f"Student with ID: {stu_id} deleted.")
                 return
         print("ID not found!")
+
 student = stu_manage()
-student.adding_stu(1,"daleap","M","30-06-2002",50.5)
-student.adding_stu(2,"pheaktra","F","21-08-2008",90.5)
-student.adding_stu(3,"bona","M","30-06-2002",45.5)
-student.delete_stu(3)
-#student.search_stu(2)
-print(student.stu)
+while True:
+    print("===> Student Management System <===")
+    print("1.Add New Student.")   
+    print("2.View Student.") 
+    print("3.Search Student.") 
+    print("4.Delet Student.") 
+    print("5.Exit.")
+
+    choice = input("\nChoose your option(1-5):") 
+
+    if choice == '1':
+        student_id = input("Enter ID of student:")
+        student_name = input("Enter Name of student:")
+        Sex = input("Enter Sex of student:")
+        birth_date = input("Enter Birth Date of student:")
+        average = input("Enter average of student:")
+        student.adding_stu(student_id = student_id,student_name=student_name,Sex=Sex,birth_date=birth_date,average=average)
+        
